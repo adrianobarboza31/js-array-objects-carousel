@@ -65,7 +65,15 @@ const right=document.getElementById("right")
 const left= document.getElementById("left")
  let index=0
 right.addEventListener("click",function destra(){
-img.innerHTML=`<img class="tutto" src="${images[index++].url}" alt="">`
+    index++
+img.innerHTML=`<img class="tutto" src="${images[index].url}" alt="">`
 console.log(img)
 imgPrincipale.append(img)
 })
+left.addEventListener("click",function sinistra(){
+    index--
+    img.innerHTML=`<img class="tutto" src="${images[index].url}" alt="">`
+    console.log(img)
+    imgPrincipale.append(img)
+    })
+   
