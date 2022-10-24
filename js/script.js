@@ -64,16 +64,34 @@ img.classList.add("tutto")
 const right=document.getElementById("right")
 const left= document.getElementById("left")
  let index=0
-right.addEventListener("click",function destra(){
-    index++
 img.innerHTML=`<img class="tutto" src="${images[index].url}" alt="">`
-console.log(img)
 imgPrincipale.append(img)
+right.addEventListener("click",function destra(){
+    if (index<4){
+        index++
+        img.innerHTML=`<img class="tutto" src="${images[index].url}" alt="">`
+        console.log(img)
+    }else{
+        index=0
+        img.innerHTML=`<img class="tutto" src="${images[index].url}" alt="">`
+        console.log(img)
+        imgPrincipale.append(img)  
+    }
+    
+  
 })
 left.addEventListener("click",function sinistra(){
-    index--
-    img.innerHTML=`<img class="tutto" src="${images[index].url}" alt="">`
-    console.log(img)
-    imgPrincipale.append(img)
+    if (index>0){
+        index--
+        img.innerHTML=`<img class="tutto" src="${images[index].url}" alt="">`
+        console.log(img)
+        imgPrincipale.append(img)
+    }else{
+        index=4
+        img.innerHTML=`<img class="tutto" src="${images[index].url}" alt="">`
+        console.log(img)
+        imgPrincipale.append(img)
+    }
+    
     })
    
